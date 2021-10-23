@@ -14,14 +14,21 @@ print("#" * 30)
 
 
 class Member:
+    not_allowed_names = ["Hell", "Shit", "Baloot"]
+    users_num = 0
 
     def __init__(self, firstName, lastName, gender):
         self.f_name = firstName
         self.l_name = lastName
         self.gender = gender
 
+        Member.users_num += 1
+
     def full_name(self):
-        return f"{self.f_name} {self.l_name}"
+        if self.f_name in Member.not_allowed_names:
+            raise ValueError("Name Not Allowed")
+        else:
+            return f"{self.f_name} {self.l_name}"
 
     def name_with_title(self):
         if self.gender == "Male":
@@ -31,9 +38,11 @@ class Member:
             return f"Hello Miss {self.f_name}"
 
 
+print(Member.users_num)
 member_One = Member("Mohamed", "Tamer", "Male")
 member_Two = Member("Habiba", "Tamer", "Female")
 print(member_One.full_name())
 print(member_One.name_with_title())
 print(member_Two.full_name())
 print(member_Two.name_with_title())
+print(Member.users_num)
