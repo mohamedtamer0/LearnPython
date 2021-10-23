@@ -45,3 +45,41 @@ print(pow(2, 5, 10))
 
 # min()
 print(min(3, -4, 2, 42, 2, 0, -1))
+
+# ----------------------------------------
+
+print("#" * 30)
+
+# Map
+# Use Map With Predefined Function
+
+
+# Normal Fun
+# def formatText(text):
+#     return f"- {text.strip()} -"
+
+
+myTexts = ["Tamer", "Mohamed", "Ahmed"]
+# Lambda
+myFormatedData = map(lambda text: f"- {text.strip()} -", myTexts)
+
+for name in myFormatedData:
+    print(name)
+
+# ----------------------------------------
+
+print("#" * 30)
+
+
+# Filter =>
+
+
+def checkNumber(num):
+    if num > 10:
+        return num
+
+
+myNumbers = [2, 4, 534, 54, 33, 4, 5, 6, 78, 43]
+myResult = filter(checkNumber, myNumbers)
+for number in myResult:
+    print(number)
