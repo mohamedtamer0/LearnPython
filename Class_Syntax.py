@@ -17,6 +17,10 @@ class Member:
     not_allowed_names = ["Hell", "Shit", "Baloot"]
     users_num = 0
 
+    @classmethod
+    def show_users_count(cls):
+        print(f"We have {cls.users_num} Users In Our System.")
+
     def __init__(self, firstName, lastName, gender):
         self.f_name = firstName
         self.l_name = lastName
@@ -46,3 +50,4 @@ print(member_One.name_with_title())
 print(member_Two.full_name())
 print(member_Two.name_with_title())
 print(Member.users_num)
+Member.show_users_count()
